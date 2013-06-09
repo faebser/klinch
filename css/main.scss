@@ -134,7 +134,7 @@ nav {
                 display: inline;
                 text-transform: uppercase;
                 a {
-                    font-size: 1em;
+                    font-size: 0.6875em;
                     letter-spacing: 0.2em;
                     color: #000000;
                     text-decoration: none;
@@ -159,11 +159,11 @@ nav {
         h1,
         h2 {
             font-weight: bold;
-            font-size: 1.273em;
+            font-size: 0.875em;
             letter-spacing: 0.1em;
         }
         h2 {
-            font-size: 1em;
+            font-size: 0.6875em;
             font-weight: normal;
             a {
                 color: #000;
@@ -190,12 +190,14 @@ nav {
         .info {
             text-transform: uppercase;
             margin-bottom: 1.5em;
+
             h2,
             p {
                 margin: 0;
             }
             p {
                 width: 100%;
+                font-size: 0.6875em;
             }
         }
     }
