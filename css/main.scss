@@ -98,12 +98,15 @@ textarea {
 /* apply a natural box layout model to all elements */
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 /* helper classes and mixins */
+$font: Arial, sans-serif;
 @mixin inlineblock() {
     display: inline;
     zoom: 1;
     display: inline-block;
 }
-
+body {
+    font-family: $font;
+}
 nav {
     width: 100%;
     position: fixed;
@@ -130,6 +133,15 @@ nav {
             li {
                 display: inline;
                 text-transform: uppercase;
+                a {
+                    font-size: 1em;
+                    letter-spacing: 0.2em;
+                    color: #000000;
+                    text-decoration: none;
+                    &:hover {
+                        color: #999999;
+                    }
+                }
             }
         } 
     }
@@ -141,8 +153,51 @@ nav {
     margin: 200px auto;
     article {
         width: 100%;
+        padding: 0 8px;
         @include inlineblock();
         text-align: center;
+        h1,
+        h2 {
+            font-weight: bold;
+            font-size: 1.273em;
+            letter-spacing: 0.1em;
+        }
+        h2 {
+            font-size: 1em;
+            font-weight: normal;
+            a {
+                color: #000;
+                &:hover {
+                    color: #999999;
+                }
+            }
+        }
+        img {
+            max-width: 100%;
+            margin: 0 auto 1.5em auto;
+        }
+        p {
+            width: 78.571428571%;
+            margin: 0 auto 1.5em auto;
+        }
+        .counter {
+            font-size: 0.55em;
+            margin-bottom: 1.5em;
+        }
+        .posterAndAudioWrapper {
+
+        }
+        .info {
+            text-transform: uppercase;
+            margin-bottom: 1.5em;
+            h2,
+            p {
+                margin: 0;
+            }
+            p {
+                width: 100%;
+            }
+        }
     }
 }
 
