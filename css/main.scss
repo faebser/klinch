@@ -114,7 +114,7 @@ nav {
     left: 0;
     #navInnerWrapper {
         width: 100%;
-        max-width: 700px;
+        max-width: 375px;
         margin: 0 auto;
        #logo {
             margin: 0 auto;
@@ -148,14 +148,19 @@ nav {
 }
 
 #main {
-    width: 100%;
-    max-width: 700px;
+    width: 300%;
     margin: 200px auto;
     article {
         width: 100%;
-        padding: 0 8px;
+        max-width: 700px;
+        //padding: 0 8px;
         @include inlineblock();
         text-align: center;
+        &.active {
+            .additionalInfo {
+                opacity: 1;
+            }
+        }
         h1,
         h2 {
             font-weight: bold;
@@ -178,6 +183,7 @@ nav {
         }
         p {
             width: 78.571428571%;
+            font-size: 0.6875em;
             margin: 0 auto 1.5em auto;
         }
         .counter {
@@ -199,6 +205,9 @@ nav {
                 width: 100%;
                 font-size: 0.6875em;
             }
+        }
+        .additionalInfo {
+            opacity: 0;
         }
     }
 }

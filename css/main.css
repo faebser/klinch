@@ -8,6 +8,7 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+/* line 17, main.scss */
 html,
 button,
 input,
@@ -15,6 +16,7 @@ select,
 textarea {
   color: #222; }
 
+/* line 21, main.scss */
 body {
   font-size: 1em;
   line-height: 1.4; }
@@ -24,10 +26,12 @@ body {
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
+/* line 32, main.scss */
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none; }
 
+/* line 37, main.scss */
 ::selection {
   background: #b3d4fc;
   text-shadow: none; }
@@ -35,6 +39,7 @@ body {
 /*
  * A better looking default horizontal rule
  */
+/* line 46, main.scss */
 hr {
   display: block;
   height: 1px;
@@ -46,12 +51,14 @@ hr {
 /*
  * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
  */
+/* line 59, main.scss */
 img {
   vertical-align: middle; }
 
 /*
  * Remove default fieldset styles.
  */
+/* line 67, main.scss */
 fieldset {
   border: 0;
   margin: 0;
@@ -60,12 +67,14 @@ fieldset {
 /*
  * Allow only vertical resizing of textareas.
  */
+/* line 77, main.scss */
 textarea {
   resize: vertical; }
 
 /* ==========================================================================
    Chrome Frame prompt
    ========================================================================== */
+/* line 85, main.scss */
 .chromeframe {
   margin: 0.2em 0;
   background: #ccc;
@@ -77,88 +86,116 @@ textarea {
    ========================================================================== */
 /* general Stuff */
 /* apply a natural box layout model to all elements */
+/* line 99, main.scss */
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 /* helper classes and mixins */
+/* line 107, main.scss */
 body {
   font-family: Arial, sans-serif; }
 
+/* line 110, main.scss */
 nav {
   width: 100%;
   position: fixed;
   top: 0;
   left: 0; }
+  /* line 115, main.scss */
   nav #navInnerWrapper {
     width: 100%;
-    max-width: 700px;
+    max-width: 375px;
     margin: 0 auto; }
+    /* line 119, main.scss */
     nav #navInnerWrapper #logo {
       margin: 0 auto;
       display: block; }
+    /* line 123, main.scss */
     nav #navInnerWrapper ul {
       margin: 0;
       padding: 0;
       text-align: justify; }
+      /* line 127, main.scss */
       nav #navInnerWrapper ul:after {
         content: ' ';
         display: inline-block;
         width: 100%;
         height: 0; }
+      /* line 133, main.scss */
       nav #navInnerWrapper ul li {
         display: inline;
         text-transform: uppercase; }
+        /* line 136, main.scss */
         nav #navInnerWrapper ul li a {
           font-size: 0.6875em;
           letter-spacing: 0.2em;
           color: #000000;
           text-decoration: none; }
+          /* line 141, main.scss */
           nav #navInnerWrapper ul li a:hover {
             color: #999999; }
 
+/* line 150, main.scss */
 #main {
-  width: 100%;
-  max-width: 700px;
+  width: 300%;
   margin: 200px auto; }
+  /* line 153, main.scss */
   #main article {
     width: 100%;
-    padding: 0 8px;
+    max-width: 700px;
     display: inline;
     zoom: 1;
     display: inline-block;
     text-align: center; }
+    /* line 160, main.scss */
+    #main article.active .additionalInfo {
+      opacity: 1; }
+    /* line 165, main.scss */
     #main article h1,
     #main article h2 {
       font-weight: bold;
       font-size: 0.875em;
       letter-spacing: 0.1em; }
+    /* line 170, main.scss */
     #main article h2 {
       font-size: 0.6875em;
       font-weight: normal; }
+      /* line 173, main.scss */
       #main article h2 a {
         color: #000; }
+        /* line 175, main.scss */
         #main article h2 a:hover {
           color: #999999; }
+    /* line 180, main.scss */
     #main article img {
       max-width: 100%;
       margin: 0 auto 1.5em auto; }
+    /* line 184, main.scss */
     #main article p {
       width: 78.571428571%;
+      font-size: 0.6875em;
       margin: 0 auto 1.5em auto; }
+    /* line 189, main.scss */
     #main article .counter {
       font-size: 0.55em;
       margin-bottom: 1.5em; }
+    /* line 196, main.scss */
     #main article .info {
       text-transform: uppercase;
       margin-bottom: 1.5em; }
+      /* line 201, main.scss */
       #main article .info h2,
       #main article .info p {
         margin: 0; }
+      /* line 204, main.scss */
       #main article .info p {
         width: 100%;
         font-size: 0.6875em; }
+    /* line 209, main.scss */
+    #main article .additionalInfo {
+      opacity: 0; }
 
 /* ==========================================================================
    Helper classes
@@ -166,6 +203,7 @@ nav {
 /*
  * Image replacement
  */
+/* line 233, main.scss */
 .ir {
   background-color: transparent;
   border: 0;
@@ -173,6 +211,7 @@ nav {
   /* IE 6/7 fallback */
   *text-indent: -9999px; }
 
+/* line 241, main.scss */
 .ir:before {
   content: "";
   display: block;
@@ -182,6 +221,7 @@ nav {
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
+/* line 252, main.scss */
 .hidden {
   display: none !important;
   visibility: hidden; }
@@ -189,6 +229,7 @@ nav {
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
+/* line 261, main.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -203,6 +244,7 @@ nav {
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
+/* line 278, main.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -215,6 +257,7 @@ nav {
 /*
  * Hide visually and from screenreaders, but maintain layout
  */
+/* line 291, main.scss */
 .invisible {
   visibility: hidden; }
 
@@ -229,6 +272,7 @@ nav {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
+/* line 308, main.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -236,6 +280,7 @@ nav {
   display: table;
   /* 2 */ }
 
+/* line 313, main.scss */
 .clearfix:after {
   clear: both; }
 
@@ -243,6 +288,7 @@ nav {
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
+/* line 322, main.scss */
 .clearfix {
   *zoom: 1; }
 
@@ -260,6 +306,7 @@ nav {
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
 @media print {
+  /* line 349, main.scss */
   * {
     background: transparent !important;
     color: #000 !important;
@@ -267,49 +314,59 @@ nav {
     box-shadow: none !important;
     text-shadow: none !important; }
 
+  /* line 357, main.scss */
   a,
   a:visited {
     text-decoration: underline; }
 
+  /* line 361, main.scss */
   a[href]:after {
     content: " (" attr(href) ")"; }
 
+  /* line 365, main.scss */
   abbr[title]:after {
     content: " (" attr(title) ")"; }
 
   /*
    * Don't show links for images, or javascript/internal links
    */
+  /* line 375, main.scss */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: ""; }
 
+  /* line 380, main.scss */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid; }
 
+  /* line 385, main.scss */
   thead {
     display: table-header-group;
     /* h5bp.com/t */ }
 
+  /* line 390, main.scss */
   tr,
   img {
     page-break-inside: avoid; }
 
+  /* line 394, main.scss */
   img {
     max-width: 100% !important; }
 
   @page {
     margin: 0.5cm; }
 
+  /* line 404, main.scss */
   p,
   h2,
   h3 {
     orphans: 3;
     widows: 3; }
 
+  /* line 410, main.scss */
   h2,
   h3 {
     page-break-after: avoid; } }
