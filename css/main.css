@@ -1,372 +1,103 @@
-/*
- * HTML5 Boilerplate
- *
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-/* line 17, main.scss */
-html,
-button,
-input,
-select,
-textarea {
-  color: #222; }
+/* HTML5 Boilerplate  What follows is the result of much research on cross-browser styling. Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal, Kroc Camen, and the H5BP dev community and team. */
+/* ========================================================================== Base styles: opinionated defaults ========================================================================== */
+html, button, input, select, textarea { color: #222; }
 
-/* line 21, main.scss */
-body {
-  font-size: 1em;
-  line-height: 1.4; }
+body { font-size: 1em; line-height: 1.4; }
 
-/*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
-/* line 32, main.scss */
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none; }
+/* Remove text-shadow in selection highlight: h5bp.com/i These selection rule sets have to be separate. Customize the background color to match your design. */
+::-moz-selection { background: #b3d4fc; text-shadow: none; }
 
-/* line 37, main.scss */
-::selection {
-  background: #b3d4fc;
-  text-shadow: none; }
+::selection { background: #b3d4fc; text-shadow: none; }
 
-/*
- * A better looking default horizontal rule
- */
-/* line 46, main.scss */
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0; }
+/* A better looking default horizontal rule */
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
 
-/*
- * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
- */
-/* line 59, main.scss */
-img {
-  vertical-align: middle; }
+/* Remove the gap between images and the bottom of their containers: h5bp.com/i/440 */
+img { vertical-align: middle; }
 
-/*
- * Remove default fieldset styles.
- */
-/* line 67, main.scss */
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0; }
+/* Remove default fieldset styles. */
+fieldset { border: 0; margin: 0; padding: 0; }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-/* line 77, main.scss */
-textarea {
-  resize: vertical; }
+/* Allow only vertical resizing of textareas. */
+textarea { resize: vertical; }
 
-/* ==========================================================================
-   Chrome Frame prompt
-   ========================================================================== */
-/* line 85, main.scss */
-.chromeframe {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0; }
+/* ========================================================================== Chrome Frame prompt ========================================================================== */
+.chromeframe { margin: 0.2em 0; background: #ccc; color: #000; padding: 0.2em 0; }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+/* ========================================================================== Author's custom styles ========================================================================== */
 /* general Stuff */
 /* apply a natural box layout model to all elements */
-/* line 99, main.scss */
-* {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 /* helper classes and mixins */
-/* line 107, main.scss */
-body {
-  font-family: Arial, sans-serif; }
+/* all the other stuff */
+body { overflow-x: hidden; font-family: Arial, sans-serif; }
 
-/* line 110, main.scss */
-nav {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0; }
-  /* line 115, main.scss */
-  nav #navInnerWrapper {
-    width: 100%;
-    max-width: 375px;
-    margin: 0 auto; }
-    /* line 119, main.scss */
-    nav #navInnerWrapper #logo {
-      margin: 0 auto;
-      display: block; }
-    /* line 123, main.scss */
-    nav #navInnerWrapper ul {
-      margin: 0;
-      padding: 0;
-      text-align: justify; }
-      /* line 127, main.scss */
-      nav #navInnerWrapper ul:after {
-        content: ' ';
-        display: inline-block;
-        width: 100%;
-        height: 0; }
-      /* line 133, main.scss */
-      nav #navInnerWrapper ul li {
-        display: inline;
-        text-transform: uppercase; }
-        /* line 136, main.scss */
-        nav #navInnerWrapper ul li a {
-          font-size: 0.6875em;
-          letter-spacing: 0.2em;
-          color: #000000;
-          text-decoration: none; }
-          /* line 141, main.scss */
-          nav #navInnerWrapper ul li a:hover {
-            color: #999999; }
+nav { width: 100%; position: fixed; top: 0; left: 0; padding-top: 30px; }
+nav #navInnerWrapper { width: 100%; max-width: 375px; margin: 0 auto; }
+nav #navInnerWrapper #logo { margin: 0 auto; display: block; }
+nav #navInnerWrapper ul { margin: 20px 0 0 0; padding: 0; text-align: justify; }
+nav #navInnerWrapper ul:after { content: ' '; display: inline-block; width: 100%; height: 0; }
+nav #navInnerWrapper ul li { display: inline; text-transform: uppercase; }
+nav #navInnerWrapper ul li a { font-size: 0.6875em; letter-spacing: 0.2em; color: #000000; text-decoration: none; }
+nav #navInnerWrapper ul li a:hover { color: #999999; }
 
-/* line 150, main.scss */
-#main {
-  width: 300%;
-  margin: 200px auto; }
-  /* line 153, main.scss */
-  #main article {
-    width: 100%;
-    max-width: 700px;
-    display: inline;
-    zoom: 1;
-    display: inline-block;
-    text-align: center; }
-    /* line 160, main.scss */
-    #main article.active .additionalInfo {
-      opacity: 1; }
-    /* line 165, main.scss */
-    #main article h1,
-    #main article h2 {
-      font-weight: bold;
-      font-size: 0.875em;
-      letter-spacing: 0.1em; }
-    /* line 170, main.scss */
-    #main article h2 {
-      font-size: 0.6875em;
-      font-weight: normal; }
-      /* line 173, main.scss */
-      #main article h2 a {
-        color: #000; }
-        /* line 175, main.scss */
-        #main article h2 a:hover {
-          color: #999999; }
-    /* line 180, main.scss */
-    #main article img {
-      max-width: 100%;
-      margin: 0 auto 1.5em auto; }
-    /* line 184, main.scss */
-    #main article p {
-      width: 78.571428571%;
-      font-size: 0.6875em;
-      margin: 0 auto 1.5em auto; }
-    /* line 189, main.scss */
-    #main article .counter {
-      font-size: 0.55em;
-      margin-bottom: 1.5em; }
-    /* line 196, main.scss */
-    #main article .info {
-      text-transform: uppercase;
-      margin-bottom: 1.5em; }
-      /* line 201, main.scss */
-      #main article .info h2,
-      #main article .info p {
-        margin: 0; }
-      /* line 204, main.scss */
-      #main article .info p {
-        width: 100%;
-        font-size: 0.6875em; }
-    /* line 209, main.scss */
-    #main article .additionalInfo {
-      opacity: 0; }
+#main { width: 100%; margin: 200px auto; }
+#main #mainWrapper { width: 2130px; }
+#main #mainWrapper article { vertical-align: top; width: 100%; max-width: 700px; display: inline; zoom: 1; display: inline-block; text-align: center; }
+#main #mainWrapper article.active .additionalInfo, #main #mainWrapper article.active .info { opacity: 1; display: block; }
+#main #mainWrapper article h1, #main #mainWrapper article h2 { font-weight: bold; font-size: 0.875em; letter-spacing: 0.1em; }
+#main #mainWrapper article h2 { font-size: 0.6875em; font-weight: normal; }
+#main #mainWrapper article h2 a { color: #000; }
+#main #mainWrapper article h2 a:hover { color: #999999; }
+#main #mainWrapper article img { max-width: 100%; margin: 0 auto 1.5em auto; }
+#main #mainWrapper article p { width: 78.571428571%; font-size: 0.6875em; margin: 0 auto 1.5em auto; }
+#main #mainWrapper article .counter { font-size: 0.55em; margin-bottom: 1.5em; }
+#main #mainWrapper article .info { text-transform: uppercase; margin-bottom: 1.5em; opacity: 0; display: none; }
+#main #mainWrapper article .info h2, #main #mainWrapper article .info p { margin: 0; }
+#main #mainWrapper article .info p { width: 100%; font-size: 0.6875em; }
+#main #mainWrapper article .additionalInfo { opacity: 0; display: none; }
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-/*
- * Image replacement
- */
-/* line 233, main.scss */
-.ir {
-  background-color: transparent;
-  border: 0;
-  overflow: hidden;
-  /* IE 6/7 fallback */
-  *text-indent: -9999px; }
+/* ========================================================================== Helper classes ========================================================================== */
+/* Image replacement */
+.ir { background-color: transparent; border: 0; overflow: hidden; /* IE 6/7 fallback */ *text-indent: -9999px; }
 
-/* line 241, main.scss */
-.ir:before {
-  content: "";
-  display: block;
-  width: 0;
-  height: 150%; }
+.ir:before { content: ""; display: block; width: 0; height: 150%; }
 
-/*
- * Hide from both screenreaders and browsers: h5bp.com/u
- */
-/* line 252, main.scss */
-.hidden {
-  display: none !important;
-  visibility: hidden; }
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
 
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
-/* line 261, main.scss */
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px; }
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 
-/*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
-/* line 278, main.scss */
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto; }
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
 
-/*
- * Hide visually and from screenreaders, but maintain layout
- */
-/* line 291, main.scss */
-.invisible {
-  visibility: hidden; }
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
 
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-/* line 308, main.scss */
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */ }
+/* Clearfix: contain floats  For modern browsers 1. The space content is one way to avoid an Opera bug when the `contenteditable` attribute is included anywhere else in the document. Otherwise it causes space to appear at the top and bottom of elements that receive the `clearfix` class. 2. The use of `table` rather than `block` is only necessary if using `:before` to contain the top-margins of child elements. */
+.clearfix:before, .clearfix:after { content: " "; /* 1 */ display: table; /* 2 */ }
 
-/* line 313, main.scss */
-.clearfix:after {
-  clear: both; }
+.clearfix:after { clear: both; }
 
-/*
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-/* line 322, main.scss */
-.clearfix {
-  *zoom: 1; }
+/* For IE 6/7 only Include this rule to trigger hasLayout and contain floats. */
+.clearfix { *zoom: 1; }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */ }
-@media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */ }
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
-   ========================================================================== */
-@media print {
-  /* line 349, main.scss */
-  * {
-    background: transparent !important;
-    color: #000 !important;
-    /* Black prints faster: h5bp.com/s */
-    box-shadow: none !important;
-    text-shadow: none !important; }
-
-  /* line 357, main.scss */
-  a,
-  a:visited {
-    text-decoration: underline; }
-
-  /* line 361, main.scss */
-  a[href]:after {
-    content: " (" attr(href) ")"; }
-
-  /* line 365, main.scss */
-  abbr[title]:after {
-    content: " (" attr(title) ")"; }
-
-  /*
-   * Don't show links for images, or javascript/internal links
-   */
-  /* line 375, main.scss */
-  .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
-    content: ""; }
-
-  /* line 380, main.scss */
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid; }
-
-  /* line 385, main.scss */
-  thead {
-    display: table-header-group;
-    /* h5bp.com/t */ }
-
-  /* line 390, main.scss */
-  tr,
-  img {
-    page-break-inside: avoid; }
-
-  /* line 394, main.scss */
-  img {
-    max-width: 100% !important; }
-
-  @page {
-    margin: 0.5cm; }
-
-  /* line 404, main.scss */
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3; }
-
-  /* line 410, main.scss */
-  h2,
-  h3 {
-    page-break-after: avoid; } }
+/* ========================================================================== EXAMPLE Media Queries for Responsive Design. These examples override the primary ('mobile first') styles. Modify as content requires. ========================================================================== */
+@media only screen and (min-width: 35em) { /* Style adjustments for viewports that meet the condition */ }
+@media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) { /* Style adjustments for high resolution devices */ }
+/* ========================================================================== Print styles. Inlined to avoid required HTTP connection: h5bp.com/r ========================================================================== */
+@media print { * { background: transparent !important; color: #000 !important; /* Black prints faster: h5bp.com/s */ box-shadow: none !important; text-shadow: none !important; }
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  /* Don't show links for images, or javascript/internal links */
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; /* h5bp.com/t */ }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; } }
