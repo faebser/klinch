@@ -198,7 +198,40 @@ nav {
                 margin-bottom: 1.5em;
             }
             .posterAndAudioWrapper {
-
+                position: relative;
+                .audiojs {
+                    width: 93px;
+                    height: 93px;
+                    .scrubber,
+                    .time,
+                    .error-message {
+                        display: none;
+                    }
+                    .play-pause {
+                        width: 93px;
+                        height: 93px;
+                        .play,
+                        .pause {
+                            width: 93px;
+                            height: 93px;
+                        }
+                        .play {
+                            background: url("../img/play.png") left top no-repeat;
+                        }
+                        .pause {
+                            background: url("../img/pause.png") left top no-repeat;
+                            display: none;
+                        }
+                    }
+                    &.playing {
+                        .play {
+                            display: none;
+                        }
+                        .pause {
+                            display: block;
+                        }
+                    }
+                }
             }
             .info {
                 text-transform: uppercase;
@@ -221,16 +254,6 @@ nav {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 /* ==========================================================================
    Helper classes

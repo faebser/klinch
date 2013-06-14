@@ -6,7 +6,13 @@ var ki = (function ($) {
 	// private methods
 	// public methods
 	module.init = function () {
+		// code for placment of buttons
 	};
 	//return the module
 	return module;
 }(jQuery));
+
+$(document).ready(function() {
+	var as = audiojs.createAll();
+	ki.init();
+});

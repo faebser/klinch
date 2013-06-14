@@ -53,6 +53,15 @@ nav #navInnerWrapper ul li a:hover { color: #999999; }
 #main #mainWrapper article img { max-width: 100%; margin: 0 auto 1.5em auto; }
 #main #mainWrapper article p { width: 78.571428571%; font-size: 0.6875em; margin: 0 auto 1.5em auto; }
 #main #mainWrapper article .counter { font-size: 0.55em; margin-bottom: 1.5em; }
+#main #mainWrapper article .posterAndAudioWrapper { position: relative; }
+#main #mainWrapper article .posterAndAudioWrapper .audiojs { width: 93px; height: 93px; }
+#main #mainWrapper article .posterAndAudioWrapper .audiojs .scrubber, #main #mainWrapper article .posterAndAudioWrapper .audiojs .time, #main #mainWrapper article .posterAndAudioWrapper .audiojs .error-message { display: none; }
+#main #mainWrapper article .posterAndAudioWrapper .audiojs .play-pause { width: 93px; height: 93px; }
+#main #mainWrapper article .posterAndAudioWrapper .audiojs .play-pause .play, #main #mainWrapper article .posterAndAudioWrapper .audiojs .play-pause .pause { width: 93px; height: 93px; }
+#main #mainWrapper article .posterAndAudioWrapper .audiojs .play-pause .play { background: url("../img/play.png") left top no-repeat; }
+#main #mainWrapper article .posterAndAudioWrapper .audiojs .play-pause .pause { background: url("../img/pause.png") left top no-repeat; display: none; }
+#main #mainWrapper article .posterAndAudioWrapper .audiojs.playing .play { display: none; }
+#main #mainWrapper article .posterAndAudioWrapper .audiojs.playing .pause { display: block; }
 #main #mainWrapper article .info { text-transform: uppercase; margin-bottom: 1.5em; opacity: 0; display: none; }
 #main #mainWrapper article .info h2, #main #mainWrapper article .info p { margin: 0; }
 #main #mainWrapper article .info p { width: 100%; font-size: 0.6875em; }
