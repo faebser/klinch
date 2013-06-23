@@ -10,15 +10,21 @@ var ki = (function ($) {
 	var productsInit = function () {
 		//cssCode = $('<style/>').html("#main #mainWrapper article.active {max-width :" + ($(window).width() - 20 * 2)  + "px; }").appendTo($("head"));
 		console.log($(".active").position().left);
-		var pos = $(".active").position().left,
-			width = $(window).width(),
-			w2 = $(".active").width();
+		productsShift($(".active").position().left, $(".active").width());
 
-			var gna = (width - w2) * 0.5;
-			console.log(gna);
-		slider.css({
-			"marginLeft" : (pos * -1) + gna
+		$("article").click(function(e) {
+			e.preventDefault();
+			slider.find("article").removeClass("active");
+			$(this).addClass("active");
+			productsShift($(this).position().left, $(this).width());
 		});
+	},
+	productsShift = function (pos, activeWidth) {
+		var width = $(window).width();
+		var gna = pos * -1 + (width - activeWidth) * 0.5
+		slider.css({
+			"marginLeft" : gna
+		})
 	};
 	// public methods
 	module.init = function () {
