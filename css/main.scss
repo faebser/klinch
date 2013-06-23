@@ -129,7 +129,7 @@ nav {
             text-align: justify;
             &:after {
                 content:' '; 
-                display: inline-block; 
+                display: inline-block;
                 width: 100%; 
                 height: 0;
             }
@@ -157,11 +157,13 @@ nav {
         width: 3 * 710px;
         article {
             vertical-align: top;
-            width: 100%;
+            width: 350px;
             max-width: 700px;
             @include inlineblock();
             text-align: center;
             &.active {
+                width: 100%;
+                max-width: 100%;
                 .additionalInfo,
                 .info {
                     opacity: 1;
