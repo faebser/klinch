@@ -199,9 +199,17 @@ nav {
             }
             .posterAndAudioWrapper {
                 position: relative;
+                .sample {
+                    width: 93px;
+                    height: 93px;
+                    background: url("../img/play.png") left top no-repeat;
+                    display: block;
+                    position: absolute;
+                }
                 .audiojs {
                     width: 93px;
                     height: 93px;
+                    position: absolute;
                     .scrubber,
                     .time,
                     .error-message {
