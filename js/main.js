@@ -60,7 +60,7 @@ var ki = (function ($) {
 			var el = $(this);
 			products.removeClass(classes.active);
 			el.addClass(classes.active);
-			productsShift(el.position().left, el.width());
+			productsShift(el.position().left, el.width(), true);
 		});
 		$(window).resize(function() {
 			winWidth = $(window).width();
@@ -73,10 +73,13 @@ var ki = (function ($) {
 			"opacity" : 1
 		});
 	},
-	productsShift = function (pos, activeWidth) {
-		var maringLeft = pos * -1 + (winWidth - activeWidth) * 0.5
+	productsShift = function (pos, activeWidth, testForTransforms) {
+		var marginLeft = pos * -1 + (winWidth - activeWidth) * 0.5
+		if(!slider.hasClass(classes.eyeCandy) && testForTransforms == true) {
+			slider.addClass(classes.eyeCandy);
+		}
 		slider.css({
-			"marginLeft" : maringLeft
+			"marginLeft" : marginLeft
 		});
 	};
 	// public methods
