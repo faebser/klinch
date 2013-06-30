@@ -104,6 +104,17 @@ $font: Arial, sans-serif;
     zoom: 1;
     display: inline-block;
 }
+
+.eyeCandy {
+    &#main {
+        -webkit-transition: all 240ms cubic-bezier(0.260, 1, 0.590, 0.995); /* older webkit */
+        -webkit-transition: all 240ms cubic-bezier(0.260, 1.060, 0.590, 0.995); 
+           -moz-transition: all 240ms cubic-bezier(0.260, 1.060, 0.590, 0.995); 
+            -ms-transition: all 240ms cubic-bezier(0.260, 1.060, 0.590, 0.995); 
+             -o-transition: all 240ms cubic-bezier(0.260, 1.060, 0.590, 0.995); 
+                transition: all 240ms cubic-bezier(0.260, 1.060, 0.590, 0.995); /* custom */
+    }
+}
 /* all the other stuff */
 body {
     overflow-x: hidden;
@@ -129,7 +140,7 @@ nav {
             text-align: justify;
             &:after {
                 content:' '; 
-                display: inline-block; 
+                display: inline-block;
                 width: 100%; 
                 height: 0;
             }
@@ -153,12 +164,15 @@ nav {
 #main {
     width: 100%;
     margin: 200px auto;
+    top: 100px;
+    opacity: 0;
+    position: relative;
     #mainWrapper {
         width: 3 * 710px;
+        position: relative;
         article {
             vertical-align: top;
-            width: 100%;
-            max-width: 700px;
+            width: 700px;
             @include inlineblock();
             text-align: center;
             &.active {

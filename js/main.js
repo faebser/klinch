@@ -9,35 +9,32 @@ var ki = (function ($) {
 			"audiojs" : "audiojs",
 			"sample" : "sample",
 			"hidden" : "hidden",
-			"active" : "active"
+			"active" : "active",
+			"eyeCandy" : "eyeCandy",
+			"info" : "info"
 		},
 		products = $('article.product'),
 		as = null,
+		slider = $('#mainWrapper'),
 		optimized = {
 			"top" : null,
 			"left" : null,
 			"minus" : null
-		};
+		},
+		main = $('#main'),
+		winWidth = $(window).width();
 	// private methods
-	var c = function (which ,withSelector) {
-		if(withSelector == false || typeof(withSelector) ==='undefined') {
-			return classes[which];
-		}
-		else {
-			return "." + classes[which];
-		}
-	},
-	audioInit = function() {
+	var	audioInit = function() {
 		if(Modernizr.audio.mp3 != '') {
 			as = audiojs.createAll();
 			$("." + classes.sample).addClass(classes.hidden);
 		}
 		else {
 			as = audiojs.createAll();
-			$("audio").addClass(c("hidden"));
+			$("audio").addClass(classes.hidden);
 		}
 	},
-	positionInit = function () {
+	positionInit = function (callback) {
 		$.each(products, function (index, element) {
 			// position the stuff
 			var e = $(element);
@@ -50,17 +47,44 @@ var ki = (function ($) {
 					"left" : optimized.left
 				});
 
-				if(e.hasClass("." + classes.active)) {
-					// center and make it bigger
-					// write fuction to hold this
+				e.find("." + classes.info).addClass(classes.eyeCandy);
+				if(e.hasClass(classes.active)) {
+					productsShift(e.position().left, e.width());
 				}
+		});
+		callback();
+	},
+	eventHandlers = function () {
+		slider.find("article").click(function (e) {
+			e.preventDefault();
+			var el = $(this);
+			products.removeClass(classes.active);
+			el.addClass(classes.active);
+			productsShift(el.position().left, el.width());
+		});
+		$(window).resize(function() {
+			winWidth = $(window).width();
+		});
+	},
+	fanzyIntroShizzle = function () {
+		main.addClass(classes.eyeCandy);
+		main.css({
+			"top" : 0,
+			"opacity" : 1
+		});
+	},
+	productsShift = function (pos, activeWidth) {
+		var maringLeft = pos * -1 + (winWidth - activeWidth) * 0.5
+		slider.css({
+			"marginLeft" : maringLeft
 		});
 	};
 	// public methods
 	module.init = function () {
 		audioInit();
-		positionInit();
 		eventHandlers();
+		positionInit(fanzyIntroShizzle);
+		
 	};
 	//return the module
 	return module;

@@ -93,160 +93,174 @@ textarea {
   box-sizing: border-box; }
 
 /* helper classes and mixins */
+/* line 109, main.scss */
+.eyeCandy#main {
+  -webkit-transition: all 240ms cubic-bezier(0.26, 1, 0.59, 0.995);
+  /* older webkit */
+  -webkit-transition: all 240ms cubic-bezier(0.26, 1.06, 0.59, 0.995);
+  -moz-transition: all 240ms cubic-bezier(0.26, 1.06, 0.59, 0.995);
+  -ms-transition: all 240ms cubic-bezier(0.26, 1.06, 0.59, 0.995);
+  -o-transition: all 240ms cubic-bezier(0.26, 1.06, 0.59, 0.995);
+  transition: all 240ms cubic-bezier(0.26, 1.06, 0.59, 0.995);
+  /* custom */ }
+
 /* all the other stuff */
-/* line 108, main.scss */
+/* line 119, main.scss */
 body {
   overflow-x: hidden;
   font-family: Arial, sans-serif; }
 
-/* line 112, main.scss */
+/* line 123, main.scss */
 nav {
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   padding-top: 30px; }
-  /* line 118, main.scss */
+  /* line 129, main.scss */
   nav #navInnerWrapper {
     width: 100%;
     max-width: 375px;
     margin: 0 auto; }
-    /* line 122, main.scss */
+    /* line 133, main.scss */
     nav #navInnerWrapper #logo {
       margin: 0 auto;
       display: block; }
-    /* line 126, main.scss */
+    /* line 137, main.scss */
     nav #navInnerWrapper ul {
       margin: 20px 0 0 0;
       padding: 0;
       text-align: justify; }
-      /* line 130, main.scss */
+      /* line 141, main.scss */
       nav #navInnerWrapper ul:after {
         content: ' ';
         display: inline-block;
         width: 100%;
         height: 0; }
-      /* line 136, main.scss */
+      /* line 147, main.scss */
       nav #navInnerWrapper ul li {
         display: inline;
         text-transform: uppercase; }
-        /* line 139, main.scss */
+        /* line 150, main.scss */
         nav #navInnerWrapper ul li a {
           font-size: 0.6875em;
           letter-spacing: 0.2em;
           color: #000000;
           text-decoration: none; }
-          /* line 144, main.scss */
+          /* line 155, main.scss */
           nav #navInnerWrapper ul li a:hover {
             color: #999999; }
 
-/* line 153, main.scss */
+/* line 164, main.scss */
 #main {
   width: 100%;
-  margin: 200px auto; }
-  /* line 156, main.scss */
+  margin: 200px auto;
+  top: 100px;
+  opacity: 0;
+  position: relative; }
+  /* line 170, main.scss */
   #main #mainWrapper {
-    width: 2130px; }
-    /* line 158, main.scss */
+    width: 2130px;
+    position: relative; }
+    /* line 173, main.scss */
     #main #mainWrapper article {
       vertical-align: top;
-      width: 100%;
-      max-width: 700px;
+      width: 700px;
       display: inline;
       zoom: 1;
       display: inline-block;
       text-align: center; }
-      /* line 166, main.scss */
+      /* line 180, main.scss */
       #main #mainWrapper article.active .additionalInfo,
       #main #mainWrapper article.active .info {
         opacity: 1;
         display: block; }
-      /* line 172, main.scss */
+      /* line 186, main.scss */
       #main #mainWrapper article h1,
       #main #mainWrapper article h2 {
         font-weight: bold;
         font-size: 0.875em;
         letter-spacing: 0.1em; }
-      /* line 177, main.scss */
+      /* line 191, main.scss */
       #main #mainWrapper article h2 {
         font-size: 0.6875em;
         font-weight: normal; }
-        /* line 180, main.scss */
+        /* line 194, main.scss */
         #main #mainWrapper article h2 a {
           color: #000; }
-          /* line 182, main.scss */
+          /* line 196, main.scss */
           #main #mainWrapper article h2 a:hover {
             color: #999999; }
-      /* line 187, main.scss */
+      /* line 201, main.scss */
       #main #mainWrapper article img {
         max-width: 100%;
         margin: 0 auto 1.5em auto; }
-      /* line 191, main.scss */
+      /* line 205, main.scss */
       #main #mainWrapper article p {
         width: 78.571428571%;
         font-size: 0.6875em;
         margin: 0 auto 1.5em auto; }
-      /* line 196, main.scss */
+      /* line 210, main.scss */
       #main #mainWrapper article .counter {
         font-size: 0.55em;
         margin-bottom: 1.5em; }
-      /* line 200, main.scss */
+      /* line 214, main.scss */
       #main #mainWrapper article .posterAndAudioWrapper {
         position: relative; }
-        /* line 202, main.scss */
+        /* line 216, main.scss */
         #main #mainWrapper article .posterAndAudioWrapper .sample {
           width: 93px;
           height: 93px;
           background: url("../img/play.png") left top no-repeat;
           display: block;
           position: absolute; }
-        /* line 209, main.scss */
+        /* line 223, main.scss */
         #main #mainWrapper article .posterAndAudioWrapper .audiojs {
           width: 93px;
           height: 93px;
           position: absolute; }
-          /* line 215, main.scss */
+          /* line 229, main.scss */
           #main #mainWrapper article .posterAndAudioWrapper .audiojs .scrubber,
           #main #mainWrapper article .posterAndAudioWrapper .audiojs .time,
           #main #mainWrapper article .posterAndAudioWrapper .audiojs .error-message {
             display: none; }
-          /* line 218, main.scss */
+          /* line 232, main.scss */
           #main #mainWrapper article .posterAndAudioWrapper .audiojs .play-pause {
             width: 93px;
             height: 93px; }
-            /* line 222, main.scss */
+            /* line 236, main.scss */
             #main #mainWrapper article .posterAndAudioWrapper .audiojs .play-pause .play,
             #main #mainWrapper article .posterAndAudioWrapper .audiojs .play-pause .pause {
               width: 93px;
               height: 93px; }
-            /* line 226, main.scss */
+            /* line 240, main.scss */
             #main #mainWrapper article .posterAndAudioWrapper .audiojs .play-pause .play {
               background: url("../img/play.png") left top no-repeat; }
-            /* line 229, main.scss */
+            /* line 243, main.scss */
             #main #mainWrapper article .posterAndAudioWrapper .audiojs .play-pause .pause {
               background: url("../img/pause.png") left top no-repeat;
               display: none; }
-          /* line 235, main.scss */
+          /* line 249, main.scss */
           #main #mainWrapper article .posterAndAudioWrapper .audiojs.playing .play {
             display: none; }
-          /* line 238, main.scss */
+          /* line 252, main.scss */
           #main #mainWrapper article .posterAndAudioWrapper .audiojs.playing .pause {
             display: block; }
-      /* line 244, main.scss */
+      /* line 258, main.scss */
       #main #mainWrapper article .info {
         text-transform: uppercase;
         margin-bottom: 1.5em;
         opacity: 0;
         display: none; }
-        /* line 250, main.scss */
+        /* line 264, main.scss */
         #main #mainWrapper article .info h2,
         #main #mainWrapper article .info p {
           margin: 0; }
-        /* line 253, main.scss */
+        /* line 267, main.scss */
         #main #mainWrapper article .info p {
           width: 100%;
           font-size: 0.6875em; }
-      /* line 258, main.scss */
+      /* line 272, main.scss */
       #main #mainWrapper article .additionalInfo {
         opacity: 0;
         display: none; }
@@ -257,7 +271,7 @@ nav {
 /*
  * Image replacement
  */
-/* line 274, main.scss */
+/* line 288, main.scss */
 .ir {
   background-color: transparent;
   border: 0;
@@ -265,7 +279,7 @@ nav {
   /* IE 6/7 fallback */
   *text-indent: -9999px; }
 
-/* line 282, main.scss */
+/* line 296, main.scss */
 .ir:before {
   content: "";
   display: block;
@@ -275,7 +289,7 @@ nav {
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
-/* line 293, main.scss */
+/* line 307, main.scss */
 .hidden {
   display: none !important;
   visibility: hidden; }
@@ -283,7 +297,7 @@ nav {
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-/* line 302, main.scss */
+/* line 316, main.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -298,7 +312,7 @@ nav {
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
-/* line 319, main.scss */
+/* line 333, main.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -311,7 +325,7 @@ nav {
 /*
  * Hide visually and from screenreaders, but maintain layout
  */
-/* line 332, main.scss */
+/* line 346, main.scss */
 .invisible {
   visibility: hidden; }
 
@@ -326,7 +340,7 @@ nav {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-/* line 349, main.scss */
+/* line 363, main.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -334,7 +348,7 @@ nav {
   display: table;
   /* 2 */ }
 
-/* line 354, main.scss */
+/* line 368, main.scss */
 .clearfix:after {
   clear: both; }
 
@@ -342,7 +356,7 @@ nav {
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
-/* line 363, main.scss */
+/* line 377, main.scss */
 .clearfix {
   *zoom: 1; }
 
@@ -360,7 +374,7 @@ nav {
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
 @media print {
-  /* line 390, main.scss */
+  /* line 404, main.scss */
   * {
     background: transparent !important;
     color: #000 !important;
@@ -368,59 +382,59 @@ nav {
     box-shadow: none !important;
     text-shadow: none !important; }
 
-  /* line 398, main.scss */
+  /* line 412, main.scss */
   a,
   a:visited {
     text-decoration: underline; }
 
-  /* line 402, main.scss */
+  /* line 416, main.scss */
   a[href]:after {
     content: " (" attr(href) ")"; }
 
-  /* line 406, main.scss */
+  /* line 420, main.scss */
   abbr[title]:after {
     content: " (" attr(title) ")"; }
 
   /*
    * Don't show links for images, or javascript/internal links
    */
-  /* line 416, main.scss */
+  /* line 430, main.scss */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: ""; }
 
-  /* line 421, main.scss */
+  /* line 435, main.scss */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid; }
 
-  /* line 426, main.scss */
+  /* line 440, main.scss */
   thead {
     display: table-header-group;
     /* h5bp.com/t */ }
 
-  /* line 431, main.scss */
+  /* line 445, main.scss */
   tr,
   img {
     page-break-inside: avoid; }
 
-  /* line 435, main.scss */
+  /* line 449, main.scss */
   img {
     max-width: 100% !important; }
 
   @page {
     margin: 0.5cm; }
 
-  /* line 445, main.scss */
+  /* line 459, main.scss */
   p,
   h2,
   h3 {
     orphans: 3;
     widows: 3; }
 
-  /* line 451, main.scss */
+  /* line 465, main.scss */
   h2,
   h3 {
     page-break-after: avoid; } }
