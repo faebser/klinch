@@ -13,15 +13,18 @@ var ki = (function ($) {
 		productsShift($(".active").position().left, $(".active").width());
 
 		$("article").click(function(e) {
-			e.preventDefault();
-			slider.find("article").removeClass("active");
-			$(this).addClass("active");
-			productsShift($(this).position().left, $(this).width());
+			if(!$(this).hasClass("active")) {
+				e.preventDefault();
+				slider.find("article").removeClass("active");
+				$(this).addClass("active");
+				productsShift($(this).position().left, $(this).width());
+			}
 		});
 	},
 	productsShift = function (pos, activeWidth) {
 		var width = $(window).width();
 		var gna = pos * -1 + (width - activeWidth) * 0.5
+		console.log(gna);
 		slider.css({
 			"marginLeft" : gna
 		})

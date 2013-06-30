@@ -157,12 +157,10 @@ nav {
         width: 3 * 710px;
         article {
             vertical-align: top;
-            width: 350px;
+            width: 700px;
             @include inlineblock();
             text-align: center;
             &.active {
-                width: 100%;
-                max-width: 1000px;
                 .additionalInfo,
                 .info {
                     opacity: 1;
