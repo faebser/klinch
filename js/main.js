@@ -27,8 +27,7 @@ var ki = (function ($) {
 		main = $('#main'),
 		winWidth = $(window).width(),
 		currentPlayer = null,
-		hoverDelay = 2000,
-		hoverTimeout = null;
+		productWidth = 700;
 	// private methods
 	var	audioInit = function() {
 		if(Modernizr.audio.mp3 != '') { // mp3 suuport
@@ -43,6 +42,7 @@ var ki = (function ($) {
 		console.log(as);
 	},
 	positionInit = function (callback) {
+		slider.width(products.length * productWidth);
 		$.each(products, function (index, element) {
 			// position the stuff
 			var e = $(element);
