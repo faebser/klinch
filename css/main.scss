@@ -100,6 +100,7 @@ textarea {
 /* helper classes and mixins */
 $font: Arial, sans-serif;
 $trans-time: 540ms;
+$hover-delay: 1000ms;
 @mixin inlineblock() {
     display: inline;
     zoom: 1;
@@ -117,6 +118,14 @@ $trans-time: 540ms;
              -o-transition: all $trans-time cubic-bezier(0.260, 1.060, 0.590, 0.945); 
                 transition: all $trans-time cubic-bezier(0.260, 1.060, 0.590, 0.945); /* custom */
     }
+    &.play-pause {
+        -webkit-transition: all $hover-delay cubic-bezier(0.260, 1, 0.590, 0.945); /* older webkit */
+        -webkit-transition: all $hover-delay cubic-bezier(0.260, 1.060, 0.590, 0.945); 
+           -moz-transition: all $hover-delay cubic-bezier(0.260, 1.060, 0.590, 0.945); 
+            -ms-transition: all $hover-delay cubic-bezier(0.260, 1.060, 0.590, 0.945); 
+             -o-transition: all $hover-delay cubic-bezier(0.260, 1.060, 0.590, 0.945); 
+                transition: all $hover-delay cubic-bezier(0.260, 1.060, 0.590, 0.945); /* custom */
+    }
 }
 /* all the other stuff */
 body {
@@ -128,8 +137,9 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 10;
     padding-top: 30px;
-    #navInnerWrapper {
+    #navInnerWrapper {        
         width: 100%;
         max-width: 375px;
         margin: 0 auto;
@@ -167,8 +177,6 @@ nav {
 #main {
     width: 100%;
     margin: 250px auto;
-    top: -200px;
-    opacity: 0;
     position: relative;
     #mainWrapper {
         width: 3 * 710px;
@@ -184,9 +192,13 @@ nav {
                     opacity: 1;
                     display: block;
                 }
-                .posterAndAudioWrapper .sample,
-                .posterAndAudioWrapper .audiojs {
-                    display: block;
+                &:hover {
+                    .posterAndAudioWrapper .sample,
+                    .posterAndAudioWrapper .sample:hover
+                    .posterAndAudioWrapper .audiojs,
+                    .posterAndAudioWrapper .play-pause {
+                        opacity: 1;
+                    }
                 }
             }
             h1,
@@ -201,11 +213,12 @@ nav {
                 a {
                     color: #000;
                     &:hover {
-                        color: #999999;
+                       color: #999999;
                     }
                 }
             }
-            img {
+            img,
+            iframe {
                 max-width: 100%;
                 margin: 0 auto 1.5em auto;
             }
@@ -226,13 +239,12 @@ nav {
                     background: url("../img/play.png") left top no-repeat;
                     display: block;
                     position: absolute;
-                    display: none;
+                    opacity: 0;
                 }
                 .audiojs {
                     width: 93px;
                     height: 93px;
                     position: absolute;
-                    display: none;
                     .scrubber,
                     .time,
                     .error-message {
@@ -241,6 +253,8 @@ nav {
                     .play-pause {
                         width: 93px;
                         height: 93px;
+                        opacity: 0;
+                        cursor: pointer;
                         .play,
                         .pause {
                             width: 93px;
@@ -248,6 +262,7 @@ nav {
                         }
                         .play {
                             background: url("../img/play.png") left top no-repeat;
+                            display: block;
                         }
                         .pause {
                             background: url("../img/pause.png") left top no-repeat;
@@ -269,6 +284,7 @@ nav {
                 margin-bottom: 1.5em;
                 opacity: 0;
                 display: none;
+                letter-spacing: 0.1em;
                 h2,
                 p {
                     margin: 0;
@@ -281,6 +297,49 @@ nav {
             .additionalInfo {
                 opacity: 0;
                 display: none;
+                letter-spacing: 0.1em;
+            }
+        }
+    }
+    #simpleContent {
+        width: 700px;
+        margin: 0 auto;
+        letter-spacing: 0.1em;
+        h1,
+        h2 {
+            font-weight: bold;
+            font-size: 0.875em;
+            letter-spacing: 0.1em;
+        }
+        h2 {
+            font-size: 0.6875em;
+            font-weight: normal;
+            a {
+                color: #000;
+                &:hover {
+                   color: #999999;
+                }
+            }
+        }
+        img,
+        iframe {
+            max-width: 100%;
+            margin: 0 auto 1.5em auto;
+        }
+        p {
+            width: 78.571428571%;
+            font-size: 0.6875em;
+            margin: 0 auto 1.5em auto;
+        }
+        strong {
+            text-transform: uppercase;
+        }
+        a {
+            color: #000;
+            text-decoration: underline;
+            color: #000000;
+            &:hover {
+                color: #999999;
             }
         }
     }
