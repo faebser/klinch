@@ -27,7 +27,8 @@ var ki = (function ($) {
 		main = $('#main'),
 		winWidth = $(window).width(),
 		currentPlayer = null,
-		productWidth = 700;
+		productWidth = 700,
+		indexOfLastShiftedProduct = null;
 	// private methods
 	var	audioInit = function() {
 		if(Modernizr.audio.mp3 != '') { // mp3 suuport
@@ -71,10 +72,13 @@ var ki = (function ($) {
 				index = el.index();
 
 			if(!el.hasClass(classes.active)) {
+				var oldIndex = slider.find("." + classes.active).index();
 				products.removeClass(classes.active);
 				el.addClass(classes.active);
 				productsShift(el.position().left, el.width(), true);
+				$(slider).bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", sliderItemTransitionCallBack(index - oldIndex));
 				// code für neverending shifting
+				
 				// if(index == 0) {
 				// 	// sliderCssWithoutTransformation({
 				// 	// 	"marginLeft" : -el.width()
@@ -86,7 +90,6 @@ var ki = (function ($) {
 				// }
 				$.each(as, function (index, element) {
 					element.pause();
-					console.log(index);
 				});
 			}
 		});
@@ -111,8 +114,35 @@ var ki = (function ($) {
 		});
 	},
 	sliderCssWithoutTransformation = function (css) {
-		slider.removeClass(classes.eyeCandy);
+		//slider.removeClass(classes.eyeCandy);
 		slider.css(css);
+		//slider.addClass(classes.eyeCandy);
+	},
+	sliderItemTransitionCallBack = function (leftOrRight) {
+		slider.removeClass(classes.eyeCandy);
+		if(leftOrRight < 0) {
+			console.log("leftOrRight: " + leftOrRight);
+			console.log("shifting left");
+			console.log(slider.find("article").last().length)
+			slider.find("article").last().addClass("bla").prependTo(slider);
+			console.log(slider.css("marginLeft"));
+			console.log("math: " + (parseFloat(slider.css("marginLeft")) + productWidth));
+			sliderCssWithoutTransformation({
+			 	"marginLeft" : (parseFloat(slider.css("marginLeft")) - productWidth) + "px"
+			 });
+			console.log(slider.css("marginLeft"));
+		}
+		else if(leftOrRight > 0) {
+			console.log("leftOrRight: " + leftOrRight);
+			console.log("shifting right");
+			slider.find("article").first().appendTo(slider);
+			sliderCssWithoutTransformation({
+			 	"marginLeft" : (parseFloat(slider.css("marginLeft")) + productWidth) + "px"
+			 });
+		}
+		else {
+			console.error("wzf: shifting error");
+		}
 		slider.addClass(classes.eyeCandy);
 	};
 	// public methods
@@ -125,6 +155,10 @@ var ki = (function ($) {
 		eventHandlers();
 		positionInit(fanzyIntroShizzle);
 		
+	},
+	module.bla = function (css) {
+		console.log(css);
+		sliderCssWithoutTransformation(css);
 	};
 	//return the module
 	return module;

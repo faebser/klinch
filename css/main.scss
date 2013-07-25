@@ -119,7 +119,7 @@ $hover-delay: 1000ms;
                 transition: all $trans-time cubic-bezier(0.260, 1.060, 0.590, 0.945); /* custom */
     }
     &.play-pause {
-        -webkit-transition: all $hover-delay cubic-bezier(0.260, 1, 0.590, 0.945); /* older webkit */
+        -webkit-transition: all $hover-delay cubic-bezier(0.260, 1, 0.590, 0.945); /* older webkit s*/
         -webkit-transition: all $hover-delay cubic-bezier(0.260, 1.060, 0.590, 0.945); 
            -moz-transition: all $hover-delay cubic-bezier(0.260, 1.060, 0.590, 0.945); 
             -ms-transition: all $hover-delay cubic-bezier(0.260, 1.060, 0.590, 0.945); 
