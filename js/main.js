@@ -13,7 +13,8 @@ var ki = (function ($) {
 			"eyeCandy" : "eyeCandy",
 			"info" : "info",
 			"showButtons" : "showButtons",
-			"playPause" : "play-pause"
+			"playPause" : "play-pause",
+			"additionalInfo" : "additionalInfo"
 		},
 		products = $('article.product'),
 		productsAmount = products.length,
@@ -66,9 +67,13 @@ var ki = (function ($) {
 		$("." + classes.sample).click(function(e) {
 			e.stopPropagation()
 		});
-		products.click(function (e) {
+		$('.' + classes.additionalInfo + " a").click(function (e) {
+			console.log("bla");
+		});
+		$("." + classes.posterAndAudioWrapper).click(function (e) {
+			console.log("blzb");
 			e.preventDefault();
-			var el = $(this),
+			var el = $(this).parent(),
 				index = el.index();
 
 			if(!el.hasClass(classes.active)) {
