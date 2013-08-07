@@ -67,32 +67,22 @@ var ki = (function ($) {
 		$("." + classes.sample).click(function(e) {
 			e.stopPropagation()
 		});
-		$('.' + classes.additionalInfo + " a").click(function (e) {
-			console.log("bla");
-		});
 		$("." + classes.posterAndAudioWrapper).click(function (e) {
-			console.log("blzb");
 			e.preventDefault();
+			
 			var el = $(this).parent(),
 				index = el.index();
 
 			if(!el.hasClass(classes.active)) {
+				slider.addClass(classes.eyeCandy);
 				var oldIndex = slider.find("." + classes.active).index();
 				products.removeClass(classes.active);
 				el.addClass(classes.active);
 				productsShift(el.position().left, el.width(), true);
-				$(slider).bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", sliderItemTransitionCallBack(index - oldIndex));
-				// code für neverending shifting
-				
-				// if(index == 0) {
-				// 	// sliderCssWithoutTransformation({
-				// 	// 	"marginLeft" : -el.width()
-				// 	// });
-				// 	slider.find("article").last().prependTo(slider);
-				// }
-				// else if (index == productsAmount -1) {
-				// 	slider.find("article").first().appendTo(slider);
-				// }
+				$(slider).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd", function(event) {
+					event.stopPropagation();
+					sliderItemTransitionCallBack(index - oldIndex);
+				});
 				$.each(as, function (index, element) {
 					element.pause();
 				});
@@ -111,35 +101,23 @@ var ki = (function ($) {
 	},
 	productsShift = function (pos, activeWidth, testForTransforms) {
 		var marginLeft = pos * -1 + (winWidth - activeWidth) * 0.5
-		if(!slider.hasClass(classes.eyeCandy) && testForTransforms == true) {
-			slider.addClass(classes.eyeCandy);
-		}
 		slider.css({
 			"marginLeft" : marginLeft
 		});
 	},
 	sliderCssWithoutTransformation = function (css) {
-		//slider.removeClass(classes.eyeCandy);
 		slider.css(css);
-		//slider.addClass(classes.eyeCandy);
 	},
 	sliderItemTransitionCallBack = function (leftOrRight) {
 		slider.removeClass(classes.eyeCandy);
 		if(leftOrRight < 0) {
-			console.log("leftOrRight: " + leftOrRight);
-			console.log("shifting left");
-			console.log(slider.find("article").last().length)
 			slider.find("article").last().addClass("bla").prependTo(slider);
-			console.log(slider.css("marginLeft"));
-			console.log("math: " + (parseFloat(slider.css("marginLeft")) + productWidth));
 			sliderCssWithoutTransformation({
 			 	"marginLeft" : (parseFloat(slider.css("marginLeft")) - productWidth) + "px"
 			 });
 			console.log(slider.css("marginLeft"));
 		}
 		else if(leftOrRight > 0) {
-			console.log("leftOrRight: " + leftOrRight);
-			console.log("shifting right");
 			slider.find("article").first().appendTo(slider);
 			sliderCssWithoutTransformation({
 			 	"marginLeft" : (parseFloat(slider.css("marginLeft")) + productWidth) + "px"
@@ -148,13 +126,15 @@ var ki = (function ($) {
 		else {
 			console.error("wzf: shifting error");
 		}
-		slider.addClass(classes.eyeCandy);
 	};
 	// public methods
 	module.init = function () {
 		main.css({
 			"top":  "-200px",
     		"opacity": 0
+		});
+		products.each(function (index, el) {
+			$(el).addClass("i-"+index);
 		});
 		audioInit();
 		eventHandlers();
