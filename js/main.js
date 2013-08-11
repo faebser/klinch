@@ -41,7 +41,6 @@ var ki = (function ($) {
 			$("audio").addClass(classes.hidden);
 			$("." + classes.sample).addClass(classes.eyeCandy);
 		}
-		console.log(as);
 	},
 	positionInit = function (callback) {
 		slider.width(products.length * productWidth);
@@ -79,10 +78,15 @@ var ki = (function ($) {
 				products.removeClass(classes.active);
 				el.addClass(classes.active);
 				productsShift(el.position().left, el.width(), true);
-				$(slider).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd", function(event) {
-					event.stopPropagation();
+				if(Modernizr.csstransitions) {
+					$(slider).one("transitionend otransitionend oTransitionEnd msTransitionEnd ", function(event) {
+						sliderItemTransitionCallBack(index - oldIndex);
+					});
+				}
+				else {
 					sliderItemTransitionCallBack(index - oldIndex);
-				});
+				}
+				
 				$.each(as, function (index, element) {
 					element.pause();
 				});
@@ -111,11 +115,10 @@ var ki = (function ($) {
 	sliderItemTransitionCallBack = function (leftOrRight) {
 		slider.removeClass(classes.eyeCandy);
 		if(leftOrRight < 0) {
-			slider.find("article").last().addClass("bla").prependTo(slider);
+			slider.find("article").last().prependTo(slider);
 			sliderCssWithoutTransformation({
 			 	"marginLeft" : (parseFloat(slider.css("marginLeft")) - productWidth) + "px"
 			 });
-			console.log(slider.css("marginLeft"));
 		}
 		else if(leftOrRight > 0) {
 			slider.find("article").first().appendTo(slider);
@@ -133,17 +136,10 @@ var ki = (function ($) {
 			"top":  "-200px",
     		"opacity": 0
 		});
-		products.each(function (index, el) {
-			$(el).addClass("i-"+index);
-		});
 		audioInit();
 		eventHandlers();
 		positionInit(fanzyIntroShizzle);
 		
-	},
-	module.bla = function (css) {
-		console.log(css);
-		sliderCssWithoutTransformation(css);
 	};
 	//return the module
 	return module;
@@ -151,8 +147,4 @@ var ki = (function ($) {
 
 $(document).ready(function() {
 	ki.init();
-});
-
-$(document).load(function() {
-
 });
