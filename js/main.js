@@ -79,7 +79,7 @@ var ki = (function ($) {
 				el.addClass(classes.active);
 				productsShift(el.position().left, el.width(), true);
 				if(Modernizr.csstransitions) {
-					$(slider).one("transitionend otransitionend oTransitionEnd msTransitionEnd ", function(event) {
+					$(slider).one("transitionend otransitionend oTransitionEnd msTransitionEnd", function(event) {
 						sliderItemTransitionCallBack(index - oldIndex);
 					});
 				}
